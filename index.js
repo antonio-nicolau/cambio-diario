@@ -1,27 +1,22 @@
-const { json } = require('express')
 const express = require('express')
-const path = require('path')
 const prepare = require('./controller')
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 80
 
 const app = express()
 const routes = express.Router()
 
 routes.get('/', (req, res) => {
 
-    res.sendFile(path.join(__dirname + '/index.html'))
+    res.send('Welcome here')
 })
 
-routes.get('/getCambios', async (req, res) => {
+routes.get('/get-exchanges', async (req, res) => {
     res.setHeader('Content-type', 'text/json')
-    const data = await prepare()
+    const exchanges = await prepare()
 
-    console.log('getCambios')
-    res.send(JSON.stringify(data))
+    res.send(JSON.stringify(exchanges))
 })
 
 app.use('/', routes)
-app.listen(port, function (req, res) {
-    console.log('server running')
-})
+app.listen(port,'192.168.1.122')
