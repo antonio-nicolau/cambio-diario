@@ -31,18 +31,18 @@ const parseData = async(content)=>{
             const bank = $(response[0]).text()
 
             // GET TODAY exchange
-            const dollarBuyToday = $(response[1]).text()
-            const euroBuyToday = $(response[2]).text()
+            let dollarBuyToday = $(response[1]).text()
+            let euroBuyToday = $(response[2]).text()
 
-            const dollarSellToday = $(response[3]).text()
-            const euroSellToday = $(response[4]).text()
+            let dollarSellToday = $(response[3]).text()
+            let euroSellToday = $(response[4]).text()
 
             //GET LAST exchange
-            const dollarBuyPast = $(response[5]).text()
-            const euroBuyPast = $(response[6]).text()
+            let dollarBuyPast = $(response[5]).text()
+            let euroBuyPast = $(response[6]).text()
 
-            const dollarSellPast = $(response[7]).text()
-            const euroSellPast = $(response[8]).text()
+            let dollarSellPast = $(response[7]).text()
+            let euroSellPast = $(response[8]).text()
 
             //GET CAMBIO VARIATION
             const dollarBuyVariation = $(response[9]).text()
@@ -51,21 +51,31 @@ const parseData = async(content)=>{
             const dollarSellVariation = $(response[11]).text()
             const euroSellVariation = $(response[12]).text()
 
+            // REPLACE , TO . AND CHANGE Type Data To Number
+            dollarBuyToday = cleanValue(dollarBuyToday)
+            euroBuyToday = cleanValue(euroBuyToday)
+            dollarSellToday = cleanValue(dollarSellToday)
+            euroSellToday = cleanValue(euroSellToday)
+            dollarBuyPast = cleanValue(dollarBuyPast)
+            euroBuyPast = cleanValue(euroBuyPast)
+            dollarSellPast = cleanValue(dollarSellPast)
+            euroSellPast = cleanValue(euroSellPast)
+
             const data = {
                 'bank':bank,
-                'dollarBuyToday':dollarBuyToday,
-                'euroBuyToday':euroBuyToday,
-                'dollarSellToday':dollarSellToday,
-                'euroSellToday':euroSellToday,
-                'dollarBuyPast':dollarBuyPast,
-                'euroBuyPast':euroBuyPast,
-                'dollarBuyPast':dollarBuyPast,
+                'dolarcompraAtual':dollarBuyToday,
+                'euroCompraAtual':euroBuyToday,
+                'dolarVendaAtual':dollarSellToday,
+                'euroVendaAtual':euroSellToday,
+                'dolarcompraPassado':dollarBuyPast,
+                'euroCompraPassado':euroBuyPast,
+                'dolarVendaPassado':dollarBuyPast,
                 'dollarSellPast':dollarSellPast,
-                'euroSellPast':euroSellPast,
-                'dollarBuyVariation':dollarBuyVariation,
-                'euroBuyVariation':euroBuyVariation,
-                'dollarSellVariation':dollarSellVariation,
-                'euroSellVariation':euroSellVariation,
+                'euroVendaPassado':euroSellPast,
+                'dolarcompraVariacao':dollarBuyVariation,
+                'euroCompraVariacao':euroBuyVariation,
+                'dolarVendaVariacao':dollarSellVariation,
+                'euroVendaVariacao':euroSellVariation,
             }
             if(data != null)
                 exchanges.push(data)
@@ -81,6 +91,11 @@ const serialiseExchanges = (exchanges)=>{
     exchanges.pop()
     exchanges.splice(exchanges.length - 2)
     return exchanges
+}
+
+const cleanValue = (value)=>{
+    value = value.replace(',','.')
+    return Number(value)
 }
 
 module.exports = prepare
