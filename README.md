@@ -10,9 +10,9 @@ The API return:
     - Dollar and Euro sell prices variation
 
 ### Capture of Json response from request to dayly exchange endpoint
-![json response from request](https://github.com/antonio-nicolau/cambio-diario/blob/main/daily%20exchange%20capture.PNG)
+![json response from request](https://github.com/antonio-nicolau/cambio-diario/blob/main/captures_for_readme/daily%20exchange%20capture.PNG)
 ### Capture of json response from convertion endpoint
-![convert money endpoint](https://github.com/antonio-nicolau/cambio-diario/blob/main/convert%20endpoint%20capture.PNG)
+![convert money endpoint](https://github.com/antonio-nicolau/cambio-diario/blob/main/captures_for_readme/convert%20endpoint%20capture.PNG)
 
 ## How To Use
 It's very simple to use
@@ -90,7 +90,7 @@ r = requests.get('https://cambio-diario.vercel.app/convert-money/us/100/1')
 if r.status_code == 200:
     print(r.json)
 ```
-![convert money endpoint](https://github.com/antonio-nicolau/cambio-diario/blob/main/convert%20endpoint%20capture.PNG)
+![convert money endpoint](https://github.com/antonio-nicolau/cambio-diario/blob/main/captures_for_readme/convert%20endpoint%20capture.PNG)
 
 ## Tools
 ### Framework: Node.js
