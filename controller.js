@@ -53,19 +53,19 @@ const parseData = async(content)=>{
 
             const data = {
                 'bank':bank,
-                'dollarBuyToday':Number(dollarBuyToday),
-                'euroBuyToday':Number(euroBuyToday),
-                'dollarSellToday':Number(dollarSellToday),
-                'euroSellToday':Number(euroSellToday),
-                'dollarBuyPast':Number(dollarBuyPast),
-                'euroBuyPast':Number(euroBuyPast),
-                'dollarBuyPast':Number(dollarBuyPast),
-                'dollarSellPast':Number(dollarSellPast),
-                'euroSellPast':Number(euroSellPast),
-                'dollarBuyVariation':Number(dollarBuyVariation),
-                'euroBuyVariation':Number(euroBuyVariation),
-                'dollarSellVariation':Number(dollarSellVariation),
-                'euroSellVariation':Number(euroSellVariation),
+                'dollarBuyToday':dollarBuyToday,
+                'euroBuyToday':euroBuyToday,
+                'dollarSellToday':dollarSellToday,
+                'euroSellToday':euroSellToday,
+                'dollarBuyPast':dollarBuyPast,
+                'euroBuyPast':euroBuyPast,
+                'dollarBuyPast':dollarBuyPast,
+                'dollarSellPast':dollarSellPast,
+                'euroSellPast':euroSellPast,
+                'dollarBuyVariation':dollarBuyVariation,
+                'euroBuyVariation':euroBuyVariation,
+                'dollarSellVariation':dollarSellVariation,
+                'euroSellVariation':euroSellVariation,
             }
             if(data != null)
                 exchanges.push(data)
