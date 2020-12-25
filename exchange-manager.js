@@ -131,8 +131,8 @@ class ExchangeManager{
         
         return {
             'dollar':dollar,
-            'kwanza':kwanza,
-            'euro':euro,
+            'kwanza':kwanza.toFixed(2),
+            'euro':euro.toFixed(2),
         }
     }
 
