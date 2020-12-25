@@ -41,7 +41,7 @@ echo $response;
 ```python
 import requests
 
-r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+r = requests.get('https://cambio-diario-cihhhwikl.vercel.app/get-exchanges'))
 if r.status_code == 200:
     print(r.json)
 ```
