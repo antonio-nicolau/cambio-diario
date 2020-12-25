@@ -119,9 +119,9 @@ class ExchangeManager{
         const euro = kwanza / euroSell
         
         return {
-            'dollar':dollar.toFixed(2),
+            'dollar':dollar,
             'kwanza':kwanza,
-            'euro':euro.toFixed(2),
+            'euro':euro,
         }
     }
 
