@@ -6,12 +6,12 @@ const port = process.env.PORT || 80
 const app = express()
 const routes = express.Router()
 
-routes.get('/api', (req, res) => {
+routes.get('/', (req, res) => {
 
     res.send('Welcome here')
 })
 
-routes.get('/api/get-exchanges', async (req, res) => {
+routes.get('/get-exchanges', async (req, res) => {
     res.setHeader('Content-type', 'text/json')
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     
