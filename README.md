@@ -10,7 +10,7 @@ The API return:
     - Dollar and Euro sell prices variation
 
 ### Picture of Json response from request to API below
-![json response from request](https://github.com/antonio-nicolau/cambio-diario/blob/main/cambio.PNG)
+![json response from request](https://github.com/antonio-nicolau/cambio-diario/blob/main/daily%20exchange%20picture.PNG)
 
 ## How To Use
 It's very simple to use, you just must make request to url below, it will return a json list containning the results
