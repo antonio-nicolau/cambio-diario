@@ -15,14 +15,14 @@ The API return:
 ## How To Use
 It's very simple to use, you just must make request to url below, it will return a json list containning the results
 
-[dayly exchange](https://cambio-diario-cihhhwikl.vercel.app/get-exchanges)
+### https://cambio-diario.vercel.app/get-exchanges
 
 ## Examples
 ### Node.js
 ```javascript
 const axios = require('axios');
 
-axios.get('https://cambio-diario-cihhhwikl.vercel.app/get-exchanges')
+axios.get('https://cambio-diario.vercel.app/get-exchanges')
   .then(function (response) {
     console.log(response);
 })
@@ -31,7 +31,7 @@ axios.get('https://cambio-diario-cihhhwikl.vercel.app/get-exchanges')
 ### PHP
 ```php
 <?php
-$url = "https://cambio-diario-cihhhwikl.vercel.app/get-exchanges";
+$url = "https://cambio-diario.vercel.app/get-exchanges";
 $response = json_decode(file_get_contents($url));
 echo $response;
 ?>
@@ -41,7 +41,7 @@ echo $response;
 ```python
 import requests
 
-r = requests.get('https://cambio-diario-cihhhwikl.vercel.app/get-exchanges'))
+r = requests.get('https://cambio-diario.vercel.app/get-exchanges'))
 if r.status_code == 200:
     print(r.json)
 ```
